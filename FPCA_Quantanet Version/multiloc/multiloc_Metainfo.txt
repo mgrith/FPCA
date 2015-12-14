@@ -1,0 +1,34 @@
+
+Name of Quantlet: FPCAmultiloc
+
+Published in: Functional Principal Component Analysis for Derivatives of High-Dimensional Spatial Curves
+
+Description: 2 dimensional local polynomial estimator
+
+Keywords: local polynomial surface estimator, derivatives
+
+See also: FPCAgpu, FPCASimulation, FPCAvariance, FPCAsimulate, FPCAindividual, FPCAepan
+
+Author: Heiko Wagner
+
+Submitted:  Maria Grith
+
+
+Input:   
+            -"X1 - x1 coordinate"
+            -"X2 - x2 coordinate"  
+            -"Y  - function value"
+            -"x1 - x1 output coordinate"
+            -"x2 - x2 output coordinate" 
+            -"h1 - bandwidth in x1 direction"
+            -"h2 - bandwidth in x2 direction"
+            -"p  - degree of polynomial"
+            
+
+Output:   
+            -"fit0  - Smoothed curves"
+            -"fit1  - Smoothed 1. derivative"
+            -"fit2  - Smoothed 2. derivative"
+            -"fit3  - Smoothed 3. derivative"
+            -"h1    - bandwidth in x1 direction"
+            -"h2    - bandwidth in x2 direction"

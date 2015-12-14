@@ -1,0 +1,21 @@
+
+Name of Quantlet: FPCAepan
+
+Published in: Functional Principal Component Analysis for Derivatives of High-Dimensional Spatial Curves
+
+Description: Epanechnikov kernel function
+
+Keywords: epanechnikov kernel
+
+See also: FPCAgpu, FPCASimulation, FPCAmultiloc, FPCAsimulate, FPCAindividual, FPCAvariance 
+
+Author: Heiko Wagner
+
+Submitted:  Maria Grith
+
+
+Input:   -"t      - time points"
+            
+
+Output:   -"k     - kernel function"
+

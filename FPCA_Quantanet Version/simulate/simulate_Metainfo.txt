@@ -1,0 +1,36 @@
+
+Name of Quantlet: FPCAsimulate
+
+Published in: Functional Principal Component Analysis for Derivatives of High-Dimensional Spatial Curves
+
+Description: simulation generated as described in the article
+
+Keywords: simulation, FPCA, surface, second derivative, state price density
+
+See also: FPCASimulation, FPCAepan, FPCAmultiloc, FPCAindividual, FPCAgpu, FPCAvariance 
+
+Author: Heiko Wagner
+
+Submitted:  Maria Grith
+
+
+Input:   
+            -"N  - Number of curves"
+            -"k  - Random State"
+            -"T  - Number of observations per curve"
+
+Output:     
+            -"Fc       - Triscattered interpolated curves"
+            -"x1minc   - Min x1 value"
+            -"x2minc   - Min x2 value"
+            -"x1maxc   - Max x1 value"
+            -"x2maxc   - Max x2 value"
+            -"cgridx   - Joined Grid x1"
+            -"cgridy   - Joined Grid x2"
+            -"c5unil   - Moneyness Axis"
+            -"c2unil   - Maturity Axis"
+            -"c3unil   - Observations with error"
+            -"c3unilr  - Observations w/o error"
+            -"realD    - True densities"
+            -"mx       - Evaluated points for realD (Moneyness axis)"
+            -"my       - Evaluated points for realD (Maturity axis)"
