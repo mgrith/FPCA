@@ -1,9 +1,11 @@
 
 Name of Quantlet: FPCAsimulation
 
-Published in: Functional Principal Component Analysis for Derivatives of High-Dimensional Spatial Curves
+Published in: 'Functional Principal Component Analysis for Derivatives of 
+High-Dimensional Spatial Curves'
 
-Description: Starts a simulation as described in the article and performs a comparison of the methods.
+Description: 'Starts a simulation as described in the article and performs 
+a comparison of the methods.'
 
 Keywords: simulation, FPCA, surface, second derivative, state price density
 
@@ -15,14 +17,14 @@ Submitted:  Maria Grith
 
 
 Input:   
-            -"reps - Repetitions +1"
-            -"Nn   - Vector of to simulate curves per trail"
-            -"Tt   - Vector of to simulate observations per curve"
+ - "reps - Repetitions +1"
+ - "Nn   - Vector of to simulate curves per trail"
+ - "Tt   - Vector of to simulate observations per curve"
 
 Output:     
-            -"meanM - Matrix of Mean MSE with entries for each value of Nn and Tt"
-            -"varV  - Matrix of variances of MSE with entries for each value of Nn and Tt"
-            -"medM  - Matrix of medians of MSE with entries for each value of Nn and Tt"
-            -"iqrM  - Matrix of IQR of MSE with entries for each value of Nn and Tt"
+ - "meanM - Matrix of Mean MSE with entries for each value of Nn and Tt"
+ - "varV  - Matrix of variances of MSE with entries for each value of Nn and Tt"
+ - "medM  - Matrix of medians of MSE with entries for each value of Nn and Tt"
+ - "iqrM  - Matrix of IQR of MSE with entries for each value of Nn and Tt"
 
 
