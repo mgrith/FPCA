@@ -7,7 +7,7 @@ Description: simulation generated as described in the article
 
 Keywords: simulation, FPCA, surface, second derivative, state price density
 
-See also: FPCASimulation, FPCAepan, FPCAmultiloc, FPCAindividual, FPCAgpu, FPCAvariance 
+See also: FPCAsimulation, FPCAepan, FPCAmultiloc, FPCAindividual, FPCAgpu, FPCAvariance 
 
 Author: Heiko Wagner
 

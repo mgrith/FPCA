@@ -7,7 +7,7 @@ Description: 2 dimensional local polynomial estimator
 
 Keywords: local polynomial surface estimator, derivatives
 
-See also: FPCAgpu, FPCASimulation, FPCAvariance, FPCAsimulate, FPCAindividual, FPCAepan
+See also: FPCAgpu, FPCASimulation, FPCAvariance, FPCAsimulate_input, FPCAindividual, FPCAepan
 
 Author: Heiko Wagner
 

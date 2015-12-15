@@ -7,7 +7,7 @@ Description: 2 dimensional variance estimator, based on Hall, Marron 1990
 
 Keywords: local polynomial surface estimator, derivatives
 
-See also: FPCAgpu, FPCASimulation, FPCAmultiloc, FPCAsimulate, FPCAindividual, FPCAepan
+See also: FPCAgpu, FPCASimulation, FPCAmultiloc, FPCAsimulate_input, FPCAindividual, FPCAepan
 
 Author: Heiko Wagner
 

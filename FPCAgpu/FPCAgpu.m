@@ -1,4 +1,4 @@
-function [hX2r, V2a, loadsa,Meansmo2b,Da,mx,my] = fpca1_gpu(L,Fc,x1minc,x2minc,x1maxc,x2maxc,cgridx,cgridy,c5unil,c2unil,c3unil,c3unilr,N,mx,my,method,comp,sigma,app)
+function [hX2r, V2a, loadsa,Meansmo2b,Da,mx,my] = FPCAgpu(L,Fc,x1minc,x2minc,x1maxc,x2maxc,cgridx,cgridy,c5unil,c2unil,c3unil,c3unilr,N,mx,my,method,comp,sigma,app)
 L   =L-1;
 mxe =mx;
 mye =my;
@@ -20,9 +20,9 @@ densx   =x1max-x1min;
 Tmat    =zeros(N,1);
 Tmon    =zeros(N,1);
 Yint    =[];
-parfor i=1:N    
+parfor i=1:N
     Tmat(i) =length(unique(cell2mat(  c2unil(i) ) ));
-    Tmon(i) =length(unique(cell2mat(  c5unil(i) ) ));    
+    Tmon(i) =length(unique(cell2mat(  c5unil(i) ) ));
     ddum    =Fc{i}( mx(:) , my(:) );
     Yint    =[Yint ddum(:)];
 end
@@ -35,7 +35,7 @@ Cdp=1.0006;   %%constant for derivatives taken from Fan 1996
 %%estimate hat(sigma)
 if(sigma==0 )
     sigma=zeros(N,1);
-    parfor i=1:N    
+    parfor i=1:N
         sigma(i)=varaince(cell2mat(  c5unil(i) ),cell2mat(  c2unil(i) ),cell2mat(  c3unil(i) ) );
     end
 end
@@ -46,17 +46,17 @@ h1m     =[];
 h2m     =[];
 scores  =[];
 parfor i=1:N
-    
+
     %%estimate optimal individual smoothing parameter
-    %%Construct polynomial estimator for h1 
+    %%Construct polynomial estimator for h1
     xachs   =cell2mat(  c2unil(i) );
     yachs   =cell2mat(  c5unil(i) );
     Lp      =[xachs.^0, xachs, xachs.^2, xachs.^3, xachs.^4, xachs.^5, yachs.^1, yachs.^2, yachs.^3, yachs.^4];
     Vxre    =cell2mat(  c3unil(i) );
     scores  =[scores (Lp'*Lp)^(-1)*Lp'*Vxre];
-    
+
     h2i=(max(cell2mat(  c2unil(i) ))-min(cell2mat(  c2unil(i) )))   *Tmat(i);
-    h1i=(max(cell2mat(  c5unil(i) ))-min(cell2mat(  c5unil(i) )))   *Tmon(i);  
+    h1i=(max(cell2mat(  c5unil(i) ))-min(cell2mat(  c5unil(i) )))   *Tmon(i);
     h1m     =[h1m h1i];
     h2m     =[h2m h2i];
 end
@@ -65,33 +65,33 @@ W       =[];
 Xsmo2m  =[];
 
 for i=1:N
-    
+
     if(method==1)
         if comp=='gpu'
-            [XmiS0m XmiS1m XmiS2m XmiS3m, W0, W1, W2, W3]=multiloc( gpuArray(cell2mat(  c5unil(i) )),gpuArray(cell2mat(  c2unil(i) )) , gpuArray(cell2mat(  c3unil(i) )),my ,mx ,h1m(i)^(-1/3),h2m(i)^(-1/3),1,'Epan'  ); %%estimate loc poly
+            [XmiS0m XmiS1m XmiS2m XmiS3m, W0, W1, W2, W3]=FPCAmultiloc( gpuArray(cell2mat(  c5unil(i) )),gpuArray(cell2mat(  c2unil(i) )) , gpuArray(cell2mat(  c3unil(i) )),my ,mx ,h1m(i)^(-1/3),h2m(i)^(-1/3),1,'Epan'  ); %%estimate loc poly
         else
-            [XmiS0m XmiS1m XmiS2m XmiS3m, W0, W1, W2, W3]=multiloc( cell2mat(  c5unil(i) ),cell2mat(  c2unil(i) ) , cell2mat(  c3unil(i) ),my ,mx ,h1m(i)^(-1/3),h2m(i)^(-1/3),1,'Epan'  ); %%estimate loc poly
+            [XmiS0m XmiS1m XmiS2m XmiS3m, W0, W1, W2, W3]=FPCAmultiloc( cell2mat(  c5unil(i) ),cell2mat(  c2unil(i) ) , cell2mat(  c3unil(i) ),my ,mx ,h1m(i)^(-1/3),h2m(i)^(-1/3),1,'Epan'  ); %%estimate loc poly
         end
-        
+
         Xsmo2m =[Xsmo2m XmiS0m'] ;
         W      = [W, W0];
     else
         if comp=='gpu'
-            [XmiS0m XmiS1m XmiS2m XmiS3m, W0, W1, W2, W3]=multiloc( gpuArray(cell2mat(  c5unil(i) )),gpuArray(cell2mat(  c2unil(i) )) , gpuArray(cell2mat(  c3unil(i) )),my ,mx ,h1m(i)^(-1/13),h2m(i)^(-1/13),7,'Epan'  ); %%estimate loc poly
+            [XmiS0m XmiS1m XmiS2m XmiS3m, W0, W1, W2, W3]=FPCAmultiloc( gpuArray(cell2mat(  c5unil(i) )),gpuArray(cell2mat(  c2unil(i) )) , gpuArray(cell2mat(  c3unil(i) )),my ,mx ,h1m(i)^(-1/13),h2m(i)^(-1/13),7,'Epan'  ); %%estimate loc poly
         else
-            [XmiS0m XmiS1m XmiS2m XmiS3m, W0, W1, W2, W3]=multiloc( cell2mat(  c5unil(i) ),cell2mat(  c2unil(i) ) , cell2mat(  c3unil(i) ),my ,mx ,h1m(i)^(-1/10),h2m(i)^(-1/10),7,'Epan'  ); %%estimate loc poly
+            [XmiS0m XmiS1m XmiS2m XmiS3m, W0, W1, W2, W3]=FPCAmultiloc( cell2mat(  c5unil(i) ),cell2mat(  c2unil(i) ) , cell2mat(  c3unil(i) ),my ,mx ,h1m(i)^(-1/10),h2m(i)^(-1/10),7,'Epan'  ); %%estimate loc poly
         end
         Xsmo2m =[Xsmo2m XmiS2m'] ;
         W      = [W, W2];
     end
-    
+
 end
 
 if comp=='gpa'
     Xsmo2m=gpuArray(Xsmo2m);
 end
 
-Xa            =Xsmo2m; 
+Xa            =Xsmo2m;
 Muc           =(1/size(Xa,1))*(Xa'*Xa - diag(mean(W).*sigmae)) ;
 M             =Muc - (1/size(Xa,1))*Xa'*repmat(mean(Xsmo2m,2),[1 N]) - (1/size(Xa,1))*repmat(mean(Xsmo2m,2),[1 N])'*Xa + (1/size(Xa,1))*repmat(mean(Xsmo2m,2),[1 N])'*repmat(mean(Xsmo2m,2),[1 N]);
 [Vduala, Da]  =eig(M);
@@ -116,9 +116,9 @@ Xsmoa   =[] ;
 Xsmo2a  =[] ;
 parfor i=1:N
     if comp=='gpu'
-        [XmiS0a XmiS1a XmiS2a XmiS3a]=multiloc( gpuArray(cell2mat(  c5unil(i) )),gpuArray(cell2mat(  c2unil(i) )) , gpuArray(cell2mat(  c3unil(i) )),mye ,mxe ,h1a(i), Cdp *h2a(i) ,3,'Gauss' ); %%estimate loc poly       
+        [XmiS0a XmiS1a XmiS2a XmiS3a]=FPCAmultiloc( gpuArray(cell2mat(  c5unil(i) )),gpuArray(cell2mat(  c2unil(i) )) , gpuArray(cell2mat(  c3unil(i) )),mye ,mxe ,h1a(i), Cdp *h2a(i) ,3,'Gauss' ); %%estimate loc poly
     else
-        [XmiS0a XmiS1a XmiS2a XmiS3a]=multiloc( cell2mat(  c5unil(i) ),cell2mat(  c2unil(i) ) ,cell2mat(  c3unil(i) ),mye ,mxe ,h1a(i), Cdp *h2a(i) ,3,'Gauss' ); %%estimate loc poly
+        [XmiS0a XmiS1a XmiS2a XmiS3a]=FPCAmultiloc( cell2mat(  c5unil(i) ),cell2mat(  c2unil(i) ) ,cell2mat(  c3unil(i) ),mye ,mxe ,h1a(i), Cdp *h2a(i) ,3,'Gauss' ); %%estimate loc poly
     end
     Xsmoa   =[Xsmoa XmiS0a'];
     Xsmo2a  =[Xsmo2a XmiS2a'];

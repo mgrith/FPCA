@@ -1,13 +1,13 @@
 
-Name of Quantlet: FPCASimulation
+Name of Quantlet: FPCAsimulation
 
 Published in: Functional Principal Component Analysis for Derivatives of High-Dimensional Spatial Curves
 
-Description: Starts a simulation as described in the article and perform a comparison of the article described methods
+Description: Starts a simulation as described in the article and performs a comparison of the methods.
 
-Keywords: FPCA, surface, 2nd derivative
+Keywords: simulation, FPCA, surface, second derivative, state price density
 
-See also: FPCAgpu, FPCAepan, FPCAmultiloc, FPCAsimulate, FPCAindividual, FPCAvariance 
+See also: FPCAgpu, FPCAepan, FPCAmultiloc, FPCAsimulate_input, FPCAindividual, FPCAvariance 
 
 Author: Heiko Wagner
 

@@ -1,4 +1,4 @@
-function [sigma] = variance( X1, X2,  Y)
+function [sigma] = FPCAvariance( X1, X2,  Y)
 
 x1     =X1;
 x2     =X2;
@@ -16,12 +16,11 @@ for (j=1:T)
         W = normpdf(Xmx1/h0) .*normpdf(Xmx2/h0)  ;
         %'using gaussian kernel'
     else
-        W = epan(Xmx1/h0) .*epan(Xmx2/h0)  ;
+        W = FPCAepan(Xmx1/h0) .*FPCAepan(Xmx2/h0)  ;
     end
     Wges(:,j) =W/sum(W);
 end
-  
+
 v     = T - 2 * sum(diag(Wges)) + sum(sum( Wges.^2)) ;
 sigma = 1/v* sum( (Y-Wges'*Y).^2 );
 end
-

@@ -5,16 +5,16 @@ Published in: Functional Principal Component Analysis for Derivatives of High-Di
 
 Description: Low dimensional decomposition of derivatives for surfaces via method M(d) with automatic bandwidth selection
 
-Keywords: FPCA, surface, derivatives
+Keywords: simulation, FPCA, surface, second derivative, state price density
 
-See also: FPCASimulation, FPCAepan, FPCAmultiloc, FPCAsimulate, FPCAindividual, FPCAvariance 
+See also: FPCASimulation, FPCAepan, FPCAmultiloc, FPCAsimulate_input, FPCAindividual, FPCAvariance
 
 Author: Heiko Wagner
 
 Submitted:  Maria Grith
 
 
-Input:   
+Input:
             -"L          - Number of Dimensions"
             -"Fc         - Triscattered interpolated curves"
             -"x1minc     - Min x1 value"
@@ -27,7 +27,7 @@ Input:
             -"c2unil     - Maturity Axis"
             -"c3unil     - Observations with error"
             -"c3unilr    - Observations wo. error"
-            -"N          - Number of Days"       
+            -"N          - Number of Days"
             -"mx         - Output Grid Monetary axis"
             -"my      	 - Output Grid Maturity axis"
             -"method     - Computation method (1=M0, 2=Md)"
@@ -35,7 +35,7 @@ Input:
             -"sigma      - Estimated or ture sigma"
             -"app        - Application (1=Yes, 0=No) effects diagonal correction"
 
-Output:     
+Output:
             -"hX2r       - Low dimensional decomposition using L Dimensions"
             -"V2a        - Eigenvectors of second derivative"
             -"loadsa     - Corresponding loadings"
@@ -43,4 +43,3 @@ Output:
             -"Da         - Eigenvalues"
             -"mx         - Output Grid Monetary axis"
             -"my         - Output Grid Maturity axis"
-

@@ -1,7 +1,7 @@
-function [hX2r,mx,my] = individual(Fc,x1minc,x2minc,x1maxc,x2maxc,cgridx,cgridy,c5unil,c2unil,c3unil,c3unilr,N,mx,my,method,comp,sigma)
+function [hX2r,mx,my] = FPCAindividual(Fc,x1minc,x2minc,x1maxc,x2maxc,cgridx,cgridy,c5unil,c2unil,c3unil,c3unilr,N,mx,my,method,comp,sigma)
 mxe=mx;
 mye=my;
-%%grid construction begin 
+%%grid construction begin
 %%to compute M we need a random grid
 x1min   =max( x1minc );
 x2min   =max( x2minc );
@@ -20,7 +20,7 @@ Tmon    =zeros(N,1);
 
 scores  =[];
 parfor i=1:N
-    
+
     xachs   =cell2mat(  c2unil(i) );
     yachs   =cell2mat(  c5unil(i) );
     Lp      =[xachs.^0, xachs, xachs.^2, xachs.^3, xachs.^4, xachs.^5, yachs.^1, yachs.^2, yachs.^3, yachs.^4];
@@ -42,7 +42,7 @@ Cdp=1.0006;   %%constant for derivatives taken from Fan 1996
 %%estimate sigma
 if(sigma==0 )
     sigma=zeros(N,1);
-    
+
     parfor i=1:N
         sigma(i)=varaince(cell2mat(  c5unil(i) ),cell2mat(  c2unil(i) ),cell2mat(  c3unil(i) ) );
     end
@@ -67,9 +67,9 @@ Xsmoa   =[] ;
 Xsmo2a  =[] ;
 parfor i=1:N
     if comp=='gpu'
-        [XmiS0a XmiS1a XmiS2a XmiS3a]=multiloc( gpuArray(cell2mat(  c5unil(i) )),gpuArray(cell2mat(  c2unil(i) )) , gpuArray(cell2mat(  c3unil(i) )),mye ,mxe ,h1a(i), Cdp *h2a(i) ,3,'Gauss' ); %%estimate loc poly
+        [XmiS0a XmiS1a XmiS2a XmiS3a]=FPCAmultiloc( gpuArray(cell2mat(  c5unil(i) )),gpuArray(cell2mat(  c2unil(i) )) , gpuArray(cell2mat(  c3unil(i) )),mye ,mxe ,h1a(i), Cdp *h2a(i) ,3,'Gauss' ); %%estimate loc poly
     else
-        [XmiS0a XmiS1a XmiS2a XmiS3a]=multiloc( cell2mat(  c5unil(i) ),cell2mat(  c2unil(i) ) ,cell2mat(  c3unil(i) ),mye ,mxe ,h1a(i), Cdp *h2a(i) ,3,'Gauss' ); %%estimate loc poly
+        [XmiS0a XmiS1a XmiS2a XmiS3a]=FPCAmultiloc( cell2mat(  c5unil(i) ),cell2mat(  c2unil(i) ) ,cell2mat(  c3unil(i) ),mye ,mxe ,h1a(i), Cdp *h2a(i) ,3,'Gauss' ); %%estimate loc poly
     end
     Xsmoa   =[Xsmoa XmiS0a'];
     Xsmo2a  =[Xsmo2a XmiS2a'];
