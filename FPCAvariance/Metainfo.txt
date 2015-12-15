@@ -1,13 +1,16 @@
 
 Name of Quantlet: FPCAvariance
 
-Published in: Functional Principal Component Analysis for Derivatives of High-Dimensional Spatial Curves
+Published in: 'Functional Principal Component Analysis for Derivatives of 
+High-Dimensional Spatial Curves.'
 
-Description: 2 dimensional variance estimator, based on Hall, Marron 1990
+Description: 'Calculates 2 dimensional variance estimator, based on 
+Hall, Marron 1990'
 
 Keywords: local polynomial surface estimator, derivatives
 
-See also: FPCAgpu, FPCASimulation, FPCAmultiloc, FPCAsimulate_input, FPCAindividual, FPCAepan
+See also: 'FPCAgpu, FPCASimulation, FPCAmultiloc, FPCAsimulate_input, 
+FPCAindividual, FPCAepan'
 
 Author: Heiko Wagner
 
@@ -15,10 +18,11 @@ Submitted:  Maria Grith
 
 
 Input:   
-            -"X1 - x1 coordinate"
-            -"X2 - x2 coordinate"  
-            -"Y  - function value"
+- "X1 - x1 coordinate"
+- "X2 - x2 coordinate"  
+- "Y  - function value"
             
 
-Output:   -"sigma"
+Output:   
+- "sigma"
 
