@@ -14,7 +14,9 @@ Author: Heiko Wagner
 Submitted:  Maria Grith
 
 
-Input:   -"t      - time points"
+Input:   
+- "t - time points"
 
 
-Output:   -"k     - kernel function"
+Output:   
+- "k - kernel function"
