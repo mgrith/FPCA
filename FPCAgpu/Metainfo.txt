@@ -13,33 +13,32 @@ Author: Heiko Wagner
 
 Submitted:  Maria Grith
 
-
 Input:
-            -"L          - Number of Dimensions"
-            -"Fc         - Triscattered interpolated curves"
-            -"x1minc     - Min x1 value"
-            -"x2minc     - Min x2 value"
-            -"x1maxc     - Max x1 value"
-            -"x2maxc     - Max x2 value"
-            -"cgridx     - Joined Grid x1"
-            -"cgridy     - Joined Grid x2"
-            -"c5unil     - Moneyness Axis"
-            -"c2unil     - Maturity Axis"
-            -"c3unil     - Observations with error"
-            -"c3unilr    - Observations wo. error"
-            -"N          - Number of Days"
-            -"mx         - Output Grid Monetary axis"
-            -"my      	 - Output Grid Maturity axis"
-            -"method     - Computation method (1=M0, 2=Md)"
-            -"comp       - GPU or No GPU (experimental, GPU usually much slower)"
-            -"sigma      - Estimated or ture sigma"
-            -"app        - Application (1=Yes, 0=No) effects diagonal correction"
+            - L          : Number of Dimensions
+            - Fc         : Triscattered interpolated curves
+            - x1minc     : Min x1 value
+            - x2minc     : Min x2 value
+            - x1maxc     : Max x1 value
+            - x2maxc     : Max x2 value
+            - cgridx     : Joined Grid x1
+            - cgridy     : Joined Grid x2
+            - c5unil     : Moneyness Axis
+            - c2unil     : Maturity Axis
+            - c3unil     : Observations with error
+            - c3unilr    : Observations wo. error
+            - N          : Number of Days
+            - mx         : Output Grid Monetary axis
+            - my      	 : Output Grid Maturity axis
+            - method     : Computation method (1=M0, 2=Md)
+            - comp       : GPU or No GPU (experimental, GPU usually much slower)
+            - sigma      : Estimated or ture sigma
+            - app        : Application (1=Yes, 0=No) effects diagonal correction
 
 Output:
-            -"hX2r       - Low dimensional decomposition using L Dimensions"
-            -"V2a        - Eigenvectors of second derivative"
-            -"loadsa     - Corresponding loadings"
-            -"Meansmo2b  - Mean curve"
-            -"Da         - Eigenvalues"
-            -"mx         - Output Grid Monetary axis"
-            -"my         - Output Grid Maturity axis"
+            - hX2r       : Low dimensional decomposition using L Dimensions
+            - V2a        : Eigenvectors of second derivative
+            - loadsa     : Corresponding loadings
+            - Meansmo2b  : Mean curve
+            - Da         : Eigenvalues
+            - mx         : Output Grid Monetary axis
+            - my         : Output Grid Maturity axis
