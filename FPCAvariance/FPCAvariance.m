@@ -1,4 +1,4 @@
-function [sigma] = FPCAvariance( X1, X2,  Y)
+function [sigma] = FPCAvariance( X1, X2, Y)
 
 x1     =X1;
 x2     =X2;
