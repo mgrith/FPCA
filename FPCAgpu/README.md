@@ -11,7 +11,7 @@ Published in: Functional Principal Component Analysis for Derivatives of High-Di
 
 Description: Low dimensional decomposition of derivatives for surfaces via method M(d) with automatic bandwidth selection
 
-Keywords: simulation, FPCA, surface, second derivative, state price density
+Keywords: simulation, FPCA, surface, derivative, density
 
 See also: FPCASimulation, FPCAepan, FPCAmultiloc, FPCAsimulate_input, FPCAindividual, FPCAvariance
 

@@ -60,7 +60,7 @@ regsy  =Lppd4y*scores;
 
 parfor i=1:N
     h1a= [h1a (1/Tmat(i))^(1/10)* (sigmae(i)/( densx* (mean(regsy(:,i) ).^2 ) )  )^(1/10)];
-    h2a= [h2a (1/Tmon(i))^(1/10)* (sigmae(i)/( densy* (mean(regsx(:,i) ).^2    ) )  )^(1/10)];
+    h2a= [h2a (1/Tmon(i))^(1/10)* (sigmae(i)/( densy* (mean(regsx(:,i) ).^2 ) )  )^(1/10)];
 end
 
 Xsmoa   =[] ;
