@@ -9,7 +9,8 @@ Name of Quantlet: FPCAindividual
 
 Published in: Functional Principal Component Analysis for Derivatives of High-Dimensional Spatial Curves
 
-Description: 'Estimates smooth second partial derivative for each curve using local polynomial regression using individual bandwidths.'
+Description: 'Estimates smooth second partial derivative for each curve using local polynomial regression
+using individual bandwidths.'
 
 Keywords: simulation, empirical, FPCA, surface, derivative, density
 
