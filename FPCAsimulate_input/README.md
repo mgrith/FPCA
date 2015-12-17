@@ -14,8 +14,7 @@ Description: 'Simulates real and noisy call prices using a mixture of log-normal
 
 Keywords: simulation, FPCA, surface, derivative, density
 
-See also: 'FPCAsimulation, FPCAepan, FPCAmultiloc, FPCAindividual, FPCAgpu,
-FPCAvariance'
+See also: 'FPCAsimulation, FPCAepan, FPCAmultiloc, FPCAindividual, FPCAgpu, FPCAvariance'
 
 Author: Heiko Wagner
 
