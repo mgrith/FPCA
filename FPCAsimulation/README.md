@@ -10,7 +10,8 @@ Name of Quantlet: FPCAsimulation
 Published in: 'Functional Principal Component Analysis for Derivatives of
 High-Dimensional Spatial Curves'
 
-Description: 'Starts a simulation for varying number of curves and observations per curve for repeated samples, and performs a comparison of the methods.'
+Description: 'Starts a simulation for varying number of curves and observations per curve for repeated samples,
+and performs a comparison of the methods.'
 
 Keywords: simulation, FPCA, surface, derivative, density
 
