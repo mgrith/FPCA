@@ -1,0 +1,26 @@
+Name of Quantlet: FPCAloadings
+
+Published in: 'Functional Principal Component Analysis for Derivatives of High-Dimensional Spatial Curves'
+
+Description: 'Employs a moving window to estimate an AR(1) model for the loadings and to estimate standard deviation of the VDAX, and plots the results.'
+
+Keywords: estimation, FPCA, call prices, derivative, density, state price density, risk neutral density, autoregressive, time series
+
+See also: FPCAgpu, FPCAepan, FPCAmultiloc, FPCAsimulate_input, FPCAindividual, FPCAvariance, FPCAexpiration, FPCAcomponents, FPCAloadings
+
+Author: Maria Grith
+
+Submitted:  Maria Grith
+
+Input:
+            - Results.mat          : Output of FPCAreal_data.m
+            - vdaxm.txt            : VDAX index time series (same date as the loadings)
+            - xData.txt            : date time series
+            - Is.txt               : index for the time series of loadings
+            - tickdatayear.txt     : tick years
+
+Output:
+            - b          : autoregressive coefficients
+            - s          : standard deviation of the error
+            - varcorr    : pairwise error correlation
+            - volv       : standard deviation of the VDAX index
