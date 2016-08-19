@@ -1,8 +1,9 @@
+
 Name of Quantlet: FPCAcomponents
 
 Published in: 'Functional Principal Component Analysis for Derivatives of High-Dimensional Spatial Curves'
 
-Description: 'It interpolates the estimated functional components at a common grid and plots them, together with the estimates loadings time series.''
+Description: 'It interpolates the estimated functional components at a common grid and plots them, together with the estimates loadings time series.'
 
 Keywords: estimation, FPCA, call prices, derivative, density, state price density, risk neutral density, functional components, time series, loadings
 
@@ -13,10 +14,10 @@ Author: Maria Grith
 Submitted:  Maria Grith
 
 Input:
-            - Results.mat          : Output of FPCAreal_data.m
-            - vdaxm.txt            : VDAX index time series (same date as the loadings)
-            - xData.txt            : date time series
-            - Is.txt               : index for the time series of loadings
-            - tickdatayear.txt     : tick years
+- Results.mat          : Output of FPCAreal_data.m
+- vdaxm.txt            : VDAX index time series (same date as the loadings)
+- xData.txt            : date time series
+- Is.txt               : index for the time series of loadings
+- tickdatayear.txt     : tick years
 
-Output: 'It plots the functional components and the corresponding loadings.''
+Output: 'It plots the functional components and the corresponding loadings.'
