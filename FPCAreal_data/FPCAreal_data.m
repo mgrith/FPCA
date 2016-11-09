@@ -6,8 +6,6 @@ clc;
 %%add your path here; genpath(folderName) returns a path string that includes folderName and multiple levels of subfolders below folderName.
 %addpath(genpath('your path'));
 
-addpath(genpath('C:\Users\maria.grith\Documents\APROJECTS\Heiko\Quantanet Version_GPU2\FINAL CODES'));
-
 %%% Start READ REAL DATA
 
 % read expiration dates
